@@ -31,8 +31,6 @@ def user():
     response = requests.post(EndpointsUrl.LOGIN_USER, json=data)
     token = response.json().get("accessToken")
 
-    if token:
-        requests.delete(EndpointsUrl.DELETE_USER, headers={'Authorization': token})
 
 
 @pytest.fixture
